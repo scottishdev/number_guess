@@ -6,18 +6,34 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     int randomNumber;
+    String message;
 
     public void guessFunction(View view){
+        EditText numberEnter = (EditText) findViewById(R.id.numberEnterEditTextNumber);
+        int guessValue = Integer.parseInt(numberEnter.getText().toString());
+
+        if (guessValue > randomNumber){
+            message = "Try lower!";
+        } else if(guessValue < randomNumber){
+            message = "Try higher!";
+        } else {
+            message = "You got it!";
+        }
+
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+
         Log.i("Works", "It works!");
+        Log.i("Entered value", numberEnter.getText().toString());
         Log.i("Random number", String.valueOf(randomNumber));
 
-        EditText numberEnter = (EditText) findViewById(R.id.numberEnterEditTextNumber);
+
     }
 
     @Override
