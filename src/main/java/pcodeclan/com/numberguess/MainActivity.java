@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
     int randomNumber;
     String message;
 
+    public void randomNumGen(){
+        Random rand = new Random();
+        randomNumber = rand.nextInt(20) + 1;
+    }
+
     public void guessFunction(View view){
         EditText numberEnter = (EditText) findViewById(R.id.numberEnterEditTextNumber);
         int guessValue = Integer.parseInt(numberEnter.getText().toString());
@@ -25,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
             message = "Try higher!";
         } else {
             message = "You got it!";
+            randomNumGen();
         }
 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
+        // Tests
         Log.i("Works", "It works!");
         Log.i("Entered value", numberEnter.getText().toString());
         Log.i("Random number", String.valueOf(randomNumber));
-
 
     }
 
@@ -41,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Random rand = new Random();
-
-        randomNumber = rand.nextInt(20)+1;
+        randomNumGen();
     }
 }
