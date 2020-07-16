@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/NumberEnterEditTextNumber"
+        android:id="@+id/numberEnterEditTextNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="39dp"
@@ -48,5 +48,5 @@
         android:text="Guess"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumberEnterEditTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/numberEnterEditTextNumber" />
 </androidx.constraintlayout.widget.ConstraintLayout>
