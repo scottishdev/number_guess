@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             randomNumGen();
         }
 
+        numberEnter.getText().clear();
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
         // Tests
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         randomNumGen();
     }
